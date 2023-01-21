@@ -1,0 +1,218 @@
+// projects start
+
+.projects{
+    position: relative;
+    margin-bottom: 80px;
+
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    &__img{
+        @include fiximg(100%,320px,true);
+        margin-bottom: 10px;
+        img{
+            max-height: 320px;
+            object-position: center;
+        }
+    }
+
+    &__title__h4{
+        @include fontAll(14px,400,$title);
+        line-height: 120%;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    &__text{
+        @include fontAll(18px,400,$link);
+        line-height: 130%;
+
+        max-height: 70px;
+        -webkit-line-clamp: 3;
+        position: relative;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+}
+
+// projects end
+
+// projects_in start
+
+.projects_in{
+    position: relative;
+    margin-bottom: 60px;
+    overflow: hidden;
+
+    &__videos{
+        position: relative;
+        @include fiximg(100%,600px,true);
+
+        a{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            &::after{
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: linear-gradient(0deg, rgba(18, 54, 84, 0.6), rgba(18, 54, 84, 0.6));
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .is-play{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 15px;
+                height: 20px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__cart__videos{
+        margin-bottom: 60px;
+    }
+
+    &__title__h4{
+        @include fontAll(18px,400,$link);
+        line-height: 130%;
+        margin-top: 20px;
+    }
+
+    &__download__list{
+        display: grid;
+        grid-gap: 30px;
+        margin-top: 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__download__item{
+        background-color:#E9F0F4;
+        padding: 20px 30px;
+    }
+
+    &__title__h3{
+        @include fontAll(18px,500,$link);
+        line-height: 130%;
+        margin-bottom: 20px;
+    }
+
+    &__download__link{
+        @include fontAll(14px,700,$title);
+        line-height: 100%;
+        display: flex;
+        align-items:center;
+        grid-gap: 5px;
+    }
+
+    .outputs_contint__cart{
+        margin: 0 !important;
+    }
+
+    .history__leader__item{
+        margin-top: 20px;
+    }
+}
+
+// projects_in end
+
+
+@media (max-width:1200px){
+    .projects__text{
+        font-size: 16px;
+        max-height: 62px;
+    }
+
+    .projects__img{
+        height: 250px;
+    }
+
+    .projects_in__title__h4,
+    .projects_in__title__h3{
+        font-size: 16px;
+    }
+
+    .projects__list,
+    .projects_in__download__list{
+        grid-gap: 20px;
+    }
+
+    .projects_in__videos{
+        height: 500px;
+    }
+
+    .projects_in__cart__videos {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width:1000px){
+    .projects__list,
+    .projects_in__download__list{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects__img{
+        height: 300px;
+    }
+
+    .projects_in__videos{
+        height: 450px;
+    }
+}
+
+@media (max-width:750px){
+    .projects__img{
+        height: 250px;
+    }
+
+    .projects_in__videos{
+        height: 350px;
+    }
+
+    .projects_in__download__list{
+        grid-template-columns: auto;
+    }
+
+    .projects_in__download__item{
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width:650px){
+    .projects__img{
+        height: auto;
+    }
+
+    .projects__list {
+        grid-template-columns: 1fr;
+    }
+
+    .projects_in__videos{
+        height: 300px;
+    }
+}
+
+@media (max-width:450px){
+    .projects_in__videos{
+        height: 250px;
+    }
+}

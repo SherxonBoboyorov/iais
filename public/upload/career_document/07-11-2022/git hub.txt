@@ -1,0 +1,17 @@
+GitHubga project joylash
+
+
+
+1.  git init
+
+2.  git add .
+
+3.  git commit -m "First Commit"
+
+4.  yaratib olingan omborni linkini quyish
+
+5.  git remote add origin https://linkni quyasiz
+
+6.  git push -u origin master
+
+

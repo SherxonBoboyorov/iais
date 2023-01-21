@@ -1,0 +1,31 @@
+// events_in start
+
+.events_in{
+    position: relative;
+    margin-bottom: 80px;
+
+    .projects__list{
+        margin-top: 20px;
+    }
+
+    &__link{
+        @include fontAll(14px,700,$title);
+        line-height: 100%;
+        display: flex;
+        justify-content: end;
+        align-items:center;
+        grid-gap: 5px;
+        text-transform:uppercase;
+        margin-top: 30px;
+    }
+
+    &__cart{
+        .events_in__list__cart + .events_in__list__cart{
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top:1px solid rgba(0, 85, 129, 0.3);
+        }
+    }
+}
+
+// events_in end

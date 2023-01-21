@@ -1,0 +1,237 @@
+// centers start
+
+.centers{
+    position: relative;
+    margin-bottom: 80px;
+
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 40px;
+    }
+
+    &__item{
+        background-color: $fff;
+        box-shadow: 0px 2px 10px rgba(18, 54, 84, 0.12);
+        padding-bottom: 20px;
+    }
+
+    &__img{
+        @include fiximg(100%,aute,true);
+        margin-bottom: 20px;
+
+        img{
+            max-height: 300px;
+            aspect-ratio: 1;
+            object-position: center top;
+        }
+    }
+
+    &__title__h3{
+        @include fontAll(18px,700,$link);
+        text-align: center;
+        padding: 0 15px;
+        margin-bottom: 20px;
+
+        max-height: 96px;
+        -webkit-line-clamp: 4;
+        position: relative;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+    &__link{
+        @include fontAll(14px,700,$title);
+        display: flex;
+        align-items:center;
+        grid-gap: 2px;
+        text-transform:uppercase;
+        justify-content: center;
+
+        span{
+            font-size: 12px;
+        }
+    }
+
+}
+
+// centers end
+
+// centers_in start
+
+.centers_in{
+    position: relative;
+    margin-bottom: 80px;
+
+    .outputs__list{
+        border:none;
+    }
+
+    &__list__cart{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 40px;
+        margin-top: 20px;
+    }
+
+    &__link{
+        @include fontAll(14px,700,$title);
+        display: flex;
+        align-items:center;
+        grid-gap: 2px;
+        text-transform:uppercase;
+        margin-top: 15px;
+
+        span{
+            font-size: 12px;
+        }
+    }
+
+    &__list{
+        margin-top: 20px;
+    }
+
+    &__list__item{
+        display: grid;
+        grid-template-columns: 280px auto;
+        grid-gap: 30px;
+        align-items:center;
+    }
+
+    &__list__img{
+        @include fiximg(100%,auto,true);
+        img{
+            max-height: 280px;
+            object-position: center;
+            aspect-ratio: 1;
+        }
+    }
+
+    &__contacts{
+        margin-top: 10px;
+        li{
+            display: grid;
+            grid-template-columns: 150px auto;
+            grid-gap: 10px;
+            padding: 10px 0;
+        }
+
+        li+li{
+            border-top:1px solid #B3CCDA;
+        }
+    }
+
+    &__contacts__text{
+        @include fontAll(16px,400,$link);
+        line-height: 130%;
+    }
+
+    &__contacts__link{
+        @include fontAll(18px,700,$link);
+        line-height: 130%;
+    }
+
+    &__link__cart{
+        display: inline-block;
+        margin-top: 20px;
+        padding: 16px 50px;
+        background-color:$title;
+        @include fontAll(12px,700,$fff);
+        line-height: 100%;
+        text-transform: uppercase;
+        border:2px solid $title;
+        @extend%transition;
+        span{
+            margin-left: 5px;
+        }
+    }
+
+    &__cart__text{
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    &__active{
+        .centers_in__cart__text{
+            width: 100%;
+            height: auto;
+            overflow: inherit;
+            opacity: 1;
+
+            .outputs__title__h2{
+                margin-top: 20px;
+            }
+        }
+
+        .centers_in__link__cart{
+            background-color:$fff;
+            color:$title;
+        }
+    }
+
+}
+
+// centers_in end
+
+@media (max-width:1300px){
+    .centers__list,
+    .centers_in__list__cart{
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .centers__title__h3 {
+        font-size: 16px;
+        max-height: 72px;
+    }
+
+    .centers_in__contacts__link{
+        font-size: 16px;
+    }
+
+    .centers_in__contacts__text{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:750px){
+    .centers__list,
+    .centers_in__list__cart{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .centers_in__list__item{
+        grid-template-columns: auto;
+    }
+
+    .centers_in__list__img {
+        max-width: 280px;
+    }
+
+    .centers_in__link__cart{
+        padding: 15px 20px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:500px){
+    .centers__list,
+    .centers_in__list__cart{
+        grid-template-columns: 1fr;
+    }
+
+    .centers_in__contacts li{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width:450px){
+    .centers_in__contacts li{
+        grid-template-columns: auto;
+    }
+}

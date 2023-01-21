@@ -1,0 +1,276 @@
+// experts start
+
+.experts{
+    position: relative;
+    margin-bottom: 80px;
+
+    &__cart{
+        display: grid;
+        grid-template-columns: 240px auto;
+        grid-gap: 60px;
+        align-items: start;
+    }
+
+    &__form{
+        display: grid;
+        grid-template-columns: auto 40px;
+        margin-top: 5px;
+        align-items:center;
+    }
+
+    &__input{
+        width: 100%;
+        height: 40px;
+        background-color:rgba(179, 204, 218, 0.3);
+        border:none;
+        outline: none;
+        padding: 10px;
+        @include fontAll(1rem,400,$link);
+        &::placeholder{
+            @include fontAll(1rem,400,$link);
+        }
+    }
+
+    &__button{
+        height: 40px;
+        width: 40px;
+        background-color:rgba(179, 204, 218, 0.3);
+        outline: none;
+        @include fontAll(1rem,400,$title);
+    }
+
+    &__title__h5{
+        @include fontAll(16px,400,$link);
+        line-height: 130%;
+        cursor: pointer;
+    }
+
+    &__form__list{
+        margin-top: 20px;
+    }
+
+    &__title__h4{
+        @include fontAll(16px,500,$title);
+        line-height: 130%;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid $title;
+    }
+
+    &__link__from{
+        @include fontAll(12px,700,$title);
+        text-transform: uppercase;
+        display: flex;
+        align-items:center;
+        grid-gap: 5px;
+        margin-top: 10px;
+        span{
+            font-size: 14px;
+        }
+    }
+
+    &__pagination{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        grid-gap: 5px;
+        margin-top: 40px;
+
+        li{
+            .active{
+                background-color:$title;
+                color:$fff;
+            }
+        }
+    }
+
+    &__pagination__next{
+        @include fontAll(16px,400,#123654);
+        line-height: 100%;
+        @extend%transition;
+        margin: 0 10px;
+
+        &:hover{
+            color:$title;
+        }
+    }
+
+    &__pagination__link{
+        @include fontAll(18px,400,$link);
+        line-height: 100%;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        @extend%transition;
+
+        &:hover{
+            background-color:$title;
+            color:$fff;
+        }
+    }
+}
+
+.input-wrap {
+    display: flex;
+    align-items:center;
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  
+    /* Hide the browser's default radio button */
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+  
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      border:3px solid #e8f0f4;
+      background-color: rgba(179, 204, 218, 0.3);
+    }
+    
+    /* When the radio button is checked, add a blue background */
+    input:checked ~ .checkmark {
+      background-color: $title;
+    }
+  
+    /* Show the indicator (dot/circle) when checked */
+
+}
+
+// experts end
+
+
+// experts_in start
+
+.experts_in{
+    position: relative;
+    margin-bottom: 80px;
+
+    .outputs__list{
+        border:none;
+    }
+
+    &__cart__img{
+        @include fiximg(400px,auto,true);
+        float: left;
+        margin-right: 50px;
+        margin-bottom: 10px;
+        img{
+            max-height: 400px;
+            aspect-ratio: 1;
+        }
+    }
+
+    &__text{
+        @include fontAll(16px,400,$link);
+        line-height: 135%;
+        text-align: justify;
+        margin-top: 20px;
+    }
+
+    &__list{
+        background-color: $fff;
+        box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.1);
+        padding: 40px 30px;
+        margin-top: 50px;
+
+        .experts_in__item+.experts_in__item{
+            border-top:1px solid rgba(0, 85, 129, 0.3);
+            margin-top: 30px;
+            padding-top: 30px;
+        }
+    }
+
+    &__outputs{
+        margin-top: 30px;
+    }
+
+    &__outputs__link{
+        @include fontAll(14px,700,$title);
+        line-height: 100%;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        text-transform: uppercase;
+        grid-gap: 5px;
+        margin-top: 10px;
+
+        span{
+            font-size: 16px;
+        }
+    }
+}
+
+// experts_in end
+
+@media (max-width:1300px){
+    .experts__cart{
+        grid-gap: 30px;
+    }
+
+    .experts_in__cart__img{
+        margin-right: 30px;
+        width: 300px;
+    }
+
+    .experts_in__list{
+        margin-top: 30px;
+    }
+
+    .experts_in__list{
+        padding: 25px 20px;
+    }
+
+    .experts_in__text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:900px){
+    
+    .experts__title__h4,
+    .experts__title__h5{
+        font-size: 14px;
+    }
+
+    .experts__cart{
+        grid-template-columns: auto;
+        grid-gap: 20px;
+    }
+
+    .experts_in__cart__img{
+        width: 250px;
+    }
+}
+
+@media (max-width:600px){
+    .experts__pagination__link {
+        width: 30px;
+        height: 30px;
+    }
+
+    .experts_in__cart__img{
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: auto;
+        float: inherit;
+    }
+
+    .experts_in__list{
+        padding: 15px 10px;
+    }
+}
