@@ -18,17 +18,19 @@ class CentersController extends Controller
     public function show($slug)
     {
         $centerabout = Centerabout::where('slug_uz', $slug)
-        ->with('directors')
         ->orWhere('slug_ru', $slug)
         ->orWhere('slug_en', $slug)
         ->first();
-        $expertpeoples = Expertpeople::orderBy('created_at', 'DESC')->where('centerabout_id',$centerabout->id)->paginate(4);
+        $director = Expertpeople::orderBy('created_at', 'DESC')->where('centerabout_id',$centerabout->id)->where('is_director',true)->first();
+       
+        $expertpeoples = Expertpeople::orderBy('created_at', 'DESC')->where('centerabout_id',$centerabout->id)->where('is_director',false)->paginate(4);
         $outputnews = Outputnew::orderBy('created_at', 'DESC')->where('centerabout_id', $centerabout->id)->paginate(3);
 
         return view('front.centers.show', compact(
             'centerabout',
             'expertpeoples',
             'outputnews',
+            'director'
         ));
     }
 }

@@ -31,13 +31,13 @@
     <div class="events_in">
         <section class="container">
             <div class="events_in__cart">
-              @foreach ($eventcategories as $eventcategory)
+              
 
                 <div class="events_in__list__cart">
-                  <h2 class="outputs__title__h2">{{ $eventcategory->{'title_' . app()->getLocale()} }}</h2>
+                  <h2 class="outputs__title__h2">@lang('main.upcoming_events')</h2>
 
                     <div class="projects__list">
-                        @foreach ($eventcategory->eventproducts as $eventproduct)
+                        @foreach ($upcoming as $eventproduct)
                         <div class="projects__item">
                             <a href="{{ route('eventproduct', $eventproduct->{'slug_' . app()->getLocale()}) }}">
                                 <div class="projects__img">
@@ -53,10 +53,31 @@
                         @endforeach
                     </div>
 
-                    <a href="{{ route('eventproducts', [$eventcategory->id]) }}" class="events_in__link">@lang('main.view_all') <span><i class="fas fa-chevron-right"></i></span></a>
+                    <a href="{{ route('eventproducts', [1]) }}" class="events_in__link">@lang('main.view_all') <span><i class="fas fa-chevron-right"></i></span></a>
                 </div>
-
-                @endforeach
+                <div class="events_in__list__cart">
+                    <h2 class="outputs__title__h2">@lang('main.past_events')</h2>
+  
+                      <div class="projects__list">
+                          @foreach ($past as $eventproduct)
+                          <div class="projects__item">
+                              <a href="{{ route('eventproduct', $eventproduct->{'slug_' . app()->getLocale()}) }}">
+                                  <div class="projects__img">
+                                      <img src="{{ asset($eventproduct->image) }}" alt="projects">
+                                  </div>
+  
+                                  <h4 class="projects__title__h4">@lang('main.past_events')</h4>
+                                  <div class="projects__text">
+                                      <p>{!! $eventproduct->{'title_' . app()->getLocale()} !!}</p>
+                                  </div>
+                              </a>
+                          </div>
+                          @endforeach
+                      </div>
+  
+                      <a href="{{ route('eventproducts', [1]) }}" class="events_in__link">@lang('main.view_all') <span><i class="fas fa-chevron-right"></i></span></a>
+                  </div>
+               
             </div>
         </section>
     </div>

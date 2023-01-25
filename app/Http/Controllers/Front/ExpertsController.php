@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Centerabout;
 use App\Models\Expertpeople;
 use App\Models\Outputnew;
 use Illuminate\Http\Request;
@@ -12,10 +13,9 @@ use Illuminate\Support\Facades\DB;
 class ExpertsController extends Controller
 {
     public function list() {
-         $expertpeoples = Expertpeople::orderBy('created_at', 'DESC')->paginate(12);
-        $centerFilter = CenterFilter::orderBy('created_at', 'DESC')->with('centerabouts')->get();
-
-         return view('front.experts.list', compact('expertpeoples', 'centerFilter'));
+        $expertpeoples = Expertpeople::orderBy('created_at', 'DESC')->paginate(12);
+        $centerFilter = CenterFilter::orderBy('created_at', 'DESC')->with('centerabouts')->paginate(4);
+        return view('front.experts.list', compact('expertpeoples', 'centerFilter'));
     }
 
 
@@ -29,6 +29,24 @@ class ExpertsController extends Controller
         $expertpeoples = $expertpeoples->paginate(12);
 
         return response(view('front.experts.expert_result',['expertpeoples'=>$expertpeoples]));
+    }
+
+    public function ajaxFilterDetails(Request $request){
+        $centersId = $request->id;
+        $lim = $request->lim;
+        $centerabout =  Centerabout::query();
+       
+        if(isset($centersId)&&!empty($centersId)){
+
+            $centerabout = $centerabout->where('centerfilter_id',$centersId);
+        }
+        if(isset($lim)&&!empty($lim)){
+            $centerabout = $centerabout->limit(2);
+        }
+
+        $centerabout = $centerabout->get();
+ 
+        return response(view('front.experts._filter_details',['centerabouts'=>$centerabout]));
     }
     public function show($slug)
     {

@@ -44,35 +44,34 @@
                     <h2 class="outputs__title__h2">@lang('main.director_of_center')</h2>
 
                     <div class="centers_in__list">
-                      @foreach ($centerabout->directors as $director)
                       <div class="centers_in__cart__item">
                         <div class="centers_in__list__item">
                             <div class="centers_in__list__img">
-                                <img src="{{ asset($director->image) }}" alt="Director">
+                                <img src="{{ asset($director->director->image) }}" alt="Director">
                             </div>
 
                             <section>
-                                <h3 class="history__title__h3">{{ $director->{'director_name_' . app()->getLocale()} }}</h3>
+                                <h3 class="history__title__h3">{{ $director->director->{'director_name_' . app()->getLocale()} }}</h3>
 
                                 <ul class="centers_in__contacts">
                                     <li>
                                         <h5 class="centers_in__contacts__text">@lang('main.job_title'):</h5>
-                                        <a class="centers_in__contacts__link">{{ $director->{'job_title_' . app()->getLocale()} }}</a>
+                                        <a class="centers_in__contacts__link">{{ $director->director->{'job_title_' . app()->getLocale()} }}</a>
                                     </li>
 
                                     <li>
                                         <h5 class="centers_in__contacts__text">@lang('main.phone_number'):</h5>
-                                        <a href="tel:{{ $director->phone_number }}" class="centers_in__contacts__link">{{ $director->phone_number }}</a>
+                                        <a href="tel:{{ $director->director->phone_number }}" class="centers_in__contacts__link">{{ $director->director->phone_number }}</a>
                                     </li>
 
                                     <li>
                                         <h5 class="centers_in__contacts__text">@lang('main.reception_days'):</h5>
-                                        <a class="centers_in__contacts__link">{{ $director->{'reception_days_' . app()->getLocale()} }}</a>
+                                        <a class="centers_in__contacts__link">{{ $director->director->{'reception_days_' . app()->getLocale()} }}</a>
                                     </li>
 
                                     <li>
                                         <h5 class="centers_in__contacts__text">@lang('main.email'):</h5>
-                                        <a href="mailto:{{ $director->email }}" class="centers_in__contacts__link">{{ $director->email }}</a>
+                                        <a href="mailto:{{ $director->director->email }}" class="centers_in__contacts__link">{{ $director->director->email }}</a>
                                     </li>
                                 </ul>
 
@@ -84,17 +83,16 @@
                             <h2 class="outputs__title__h2">@lang('main.center_for_sustainable')</h2>
                             <div class="history__list__text clearfix">
                                 <p>
-                                    {!! $director->{'center_for_sustianable_' . app()->getLocale()} !!}
+                                    {!! $director->director->{'center_for_sustianable_' . app()->getLocale()} !!}
                                 </p>
                             </div>
                             <h2 class="outputs__title__h2">@lang('main.development')</h2>
                             <div class="history__list__text clearfix">
                                 <p>
-                                    {!! $director->{'development_' . app()->getLocale()} !!}
+                                    {!! $director->director->{'development_' . app()->getLocale()} !!}
                                 </p>
                             </div>
                         </section>
-                        @endforeach
                     </div>
                 </div>
                 

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use DB;
+use App\Models\Director;
 
 class Expertpeople extends Model
 {
@@ -74,5 +75,9 @@ class Expertpeople extends Model
         }
 
         return true;
+    }
+
+    public function director(){
+        return $this->hasOne(Director::class,'expertpeoples_id','id');
     }
 }

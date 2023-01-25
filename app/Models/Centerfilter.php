@@ -18,4 +18,8 @@ class Centerfilter extends Model
     public function centerabouts() {
         return $this->hasMany(Centerabout::class);
     }
+
+    public function abouts(){
+        return $this->centerabouts()->limit(2)->get();
+    }
 }

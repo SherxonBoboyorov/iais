@@ -96,8 +96,13 @@ Route::group(
         Route::get('centerabouts', [CentersController::class, 'list'])->name('centerabouts');
         Route::get('centerabouts/{slug}', [CentersController::class, 'show'])->name('centerabout');
         Route::get('expertpeoples', [ExpertsController::class, 'list'])->name('expertpeoples');
-        Route::post('expertpeoples/ajax-expert-filter', [ExpertsController::class, 'ajaxExpertFilterList'])->name('outputnews.ajaxExpertFilter');
+        Route::post('expertpeoples/ajax-expert-filter', [ExpertsController::class, 'ajaxExpertFilterList'])->name('expertpeoples.ajaxExpertFilter');
+        Route::get('expertpeoples/ajax-filter-details', [ExpertsController::class, 'ajaxFilterDetails'])->name('expertpeoples.ajaxFilterDetails');
+   
         Route::get('expertpeoples/{slug}', [ExpertsController::class, 'show'])->name('expertpeople');
+        
+            
+        
         Route::get('contact', [ContactController::class, 'index'])->name('contact');
         Route::get('outputnews/{id?}', [OutputController::class, 'list'])->name('outputnews');
         Route::post('outputnews/ajax-filter', [OutputController::class, 'ajaxFilterList'])->name('outputnews.ajaxFilter');

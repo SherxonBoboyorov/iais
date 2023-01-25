@@ -11,11 +11,13 @@ class EventsController extends Controller
 {
     public function index() {
 
-        $upcoming = EventProduct::where('created_at',">=",now())->orderBy('created_at', 'DESC')->get();
-        $past = EventProduct::where('created_at',"<=",now())->orderBy('created_at', 'DESC')->get();
-        dd($upcoming,$past);
+        $upcoming = EventProduct::where('created_at',">=",now())->orderBy('created_at', 'DESC')->limit(3)->get();
+        $past = EventProduct::where('created_at',"<=",now())->orderBy('created_at', 'DESC')->limit(3)->get();
+       
         return view('front.events', compact(
-            'eventcategories',
+            'upcoming',
+            'past'
+
         ));
     }
 }
