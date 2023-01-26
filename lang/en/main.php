@@ -45,6 +45,10 @@ return [
     'topics' => 'Topics',
     'regions' => 'Regions',
     'show_more' => 'Show more',
+    'show_less' => 'Show less',
+
+    "past_events"=>'Past events',
+    "upcoming_events"=>'Upcoming events',
     'biography' => 'Biography',
     'publications' => 'Publications',
     'fax' => 'Fax',

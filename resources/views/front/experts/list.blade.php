@@ -62,7 +62,7 @@
                             </div>
                            
 
-                            <a href="#!" data-less="0" data-id="<?= $value->id ?>" class="filter_show_more experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a>
+                            <a href="#!" data-less="0" data-showMore="@lang('main.show_more')" data-showLess="@lang('main.show_less')"   data-id="<?= $value->id ?>" class="filter_show_more experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a>
                         </section>
                         @endforeach
                     </form>

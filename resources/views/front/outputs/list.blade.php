@@ -55,24 +55,25 @@
                             </label>
                             @endforeach
 
-                            <a href="#!" class="experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a>
+                            {{-- <a href="#!" class="experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a> --}}
 
                         </section>
-                        @foreach ($centerFilter as $item)
+                        @foreach ($centerFilter as $value)
                             <section class="experts__form__list filter_by__centers">
-                                <h4 class="experts__title__h4">{{ $item->{'tropic_' . app()->getLocale()}  }}</h4>
-                                @foreach ($item->centerabouts as $item)
+                                <h4 class="experts__title__h4">{{ $value->{'tropic_' . app()->getLocale()}  }}</h4>
+                                <div id="regionSection<?= $value->id ?>">
+                                    @foreach ($value->abouts() as $item)
 
-                                    <label class="input-wrap">
-                                        <input type="checkbox" name="center_id[]" value="{{$item->id}}" class="experts__input__form">
-                                        <span class="checkmark"></span>
-                                        <h5 class="experts__title__h5">{{ $item->{'title_' . app()->getLocale()} }}</h5>
-                                    </label>
+                                        <label class="input-wrap">
+                                            <input type="checkbox" name="center_id[]" value="{{$item->id}}" class="experts__input__form">
+                                            <span class="checkmark"></span>
+                                            <h5 class="experts__title__h5">{{ $item->{'title_' . app()->getLocale()} }}</h5>
+                                        </label>
 
-                                @endforeach
-
-                                <a href="#!" class="experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a>
-                            </section>
+                                    @endforeach
+                                </div>                               
+                            <a href="#!" data-less="0" data-showMore="@lang('main.show_more')" data-showLess="@lang('main.show_less')"   data-id="<?= $value->id ?>" class="filter_show_more experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a>
+                        </section>
                         @endforeach
 
                     </form>

@@ -76,15 +76,19 @@
 
                             <ul class="outputs_contint__icons">
                                 <li>
-                                    <a href="{{ $options->where('key', 'instagram')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-instagram"></i></a>
+                                    <a href="http://twitter.com/share?text=Im Sharing on Twitter&url={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-facebook"></i></a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ $options->where('key', 'invision')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-invision"></i></a>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-facebook"></i></a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ $options->where('key', 'youtube')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-youtube"></i></a>
+                                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={!! request()->url() !!}&title={!!  $outputnew->{'title_' . app()->getLocale()}  !!}" class="outputs_contint__icons__link"><i class="fab fa-linkedin"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="https://t.me/share/url?url={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-telegram"></i></a>
                                 </li>
                             </ul>
                         </section>

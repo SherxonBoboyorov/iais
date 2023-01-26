@@ -8,6 +8,9 @@ $(document).ready(function(){
 
     let showMoreButton = $('.filter_show_more');
 
+    
+
+
     checkBoxButton.click(function(e){
         formValues = filterExpertForm.serialize();
         getMessage(formValues)
@@ -24,7 +27,8 @@ $(document).ready(function(){
                 data:{id:id},
                 success:function(res){
                     e.target.dataset.less=1
-                    e.target.innerHTML = 'Kamroq ko\'rsatish <span><i class="fas fa-angle-up"></i></span>';
+                    let showLessText = e.target.dataset.showless
+                    e.target.innerHTML = showLessText + ' <span><i class="fas fa-angle-up"></i></span>';
                     section.empty();
                     section.append(res)
                 },
@@ -40,7 +44,8 @@ $(document).ready(function(){
                 data:{id:id,lim:4},
                 success:function(res){
                     e.target.dataset.less=0
-                    e.target.innerHTML = 'Ko\'proq ko\'rsatish <span><i class="fas fa-angle-down"></i></span>';
+                    let showMoreText = e.target.dataset.showmore
+                    e.target.innerHTML = showMoreText+' <span><i class="fas fa-angle-down"></i></span>';
                     section.empty();
                     section.append(res)
                 },

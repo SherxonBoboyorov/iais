@@ -39,7 +39,7 @@
                         {!! $centerabout->{'description_' . app()->getLocale()} !!}
                    </p>
                 </div>
-
+            @if(isset($director->director)&!empty($director->director))
                 <div class="history__leader__cart">
                     <h2 class="outputs__title__h2">@lang('main.director_of_center')</h2>
 
@@ -95,7 +95,7 @@
                         </section>
                     </div>
                 </div>
-                
+            @endif             
 
                 <div class="history__leader__cart">
                     <h2 class="outputs__title__h2">@lang('main.experts')</h2>
