@@ -33,7 +33,6 @@
                         <tr>
                             <th style="width: 2%;">#</th>
                             <th>Image</th>
-                            <th>Event category</th>
                             <th>Title [Uzbek]</th>
                             <th>Title [Russian]</th>
                             <th>Title [English]</th>
@@ -47,7 +46,6 @@
                             <td>
                                 <img src="{{ asset($eventproduct->image) }}" alt="" width="35" height="35">
                             </td>
-                            <td>{{ $eventproduct->eventcategory->title_en ?? "" }}</td>
                             <td>{{ $eventproduct->title_uz }}</td>
                             <td>{{ $eventproduct->title_ru }}</td>
                             <td>{{ $eventproduct->title_en }}</td>

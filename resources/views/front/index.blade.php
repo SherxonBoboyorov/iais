@@ -179,7 +179,7 @@
                             </div>
 
                             <div class="events__item__cart">
-                                <h4 class="events__title__h4">{{ $eventproducts[0]->eventcategory->{'title_' . app()->getLocale()} }}</h4>
+                                <h4 class="events__title__h4">past event</h4>
                                 <h5 class="events__title__h5">{{ $eventproducts[0]->created_at->format('F d, Y') }}</h5>
                             </div>
 
@@ -204,7 +204,7 @@
 
                                 <section>
                                     <div class="events__item__cart">
-                                        <h4 class="events__title__h4">{{ $eventproduct->eventcategory->{'title_' . app()->getLocale()} }}</h4>
+                                        <h4 class="events__title__h4">upcoming event</h4>
                                         <h5 class="events__title__h5">{{ $eventproduct->created_at->format('F d, Y') }}</h5>
                                     </div>
                                     <h3 class="events__title__h3">{{ $eventproduct->{'title_' . app()->getLocale()} }}</h3>

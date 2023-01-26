@@ -20,11 +20,11 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <label>Centers  </label>
                             <select name="centerabout_id" id="centerabout_id" class="form-control">
                                 @foreach ($centerabouts as $centerabout)
-                                    <option value="{{ $centerabout->id }}">{{ $centerabout->title_ru }}</option>
+                                    <option value="{{ $centerabout->id }}">{{ $centerabout->title_en }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('centerabout_id'))
@@ -36,7 +36,27 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+
+                        <div class="col-md-4">
+                            <label>Experts</label>
+                            <select name="expertpeople_id" id="expertpeople_id" class="form-control">
+                                @foreach ($expertpeoples as $expertpeople)
+                                    <option value="{{ $expertpeople->id }}">{{ $expertpeople->title_en }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('expertpeople_id'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('expertpeople_id') }}
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+
+                        <div class="col-md-4">
                             <label for="director_name_uz">Director name [Uzbek]</label>
                             <input type="text" id="director_name_uz" class="form-control" name="director_name_uz">
                             @if($errors->has('director_name_uz'))
@@ -48,7 +68,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="director_name_ru">Director name [Russian]</label>
                             <input type="text" id="director_name_ru" class="form-control" name="director_name_ru">
                             @if($errors->has('director_name_ru'))
@@ -60,7 +80,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="director_name_en">Director name [English]</label>
                             <input type="text" id="director_name_en" class="form-control" name="director_name_en">
                             @if($errors->has('director_name_en'))
@@ -138,7 +158,7 @@
 
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-3">
-                            <label for="reception_days_uz">Reception days:: [Uzbek]</label>
+                            <label for="reception_days_uz">Reception days: [Uzbek]</label>
                             <input type="text" id="reception_days_uz" class="form-control" name="reception_days_uz">
                             @if($errors->has('reception_days_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -152,7 +172,7 @@
                       </div>
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-3">
-                                <label for="reception_days_ru">Reception days:: [Russian]</label>
+                                <label for="reception_days_ru">Reception days: [Russian]</label>
                                 <input type="text" id="reception_days_ru" class="form-control" name="reception_days_ru">
                                 @if($errors->has('reception_days_ru'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -166,7 +186,7 @@
                         </div>
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-3">
-                                <label for="reception_days_en">Reception days:: [English]</label>
+                                <label for="reception_days_en">Reception days: [English]</label>
                                 <input type="text" id="reception_days_en" class="form-control" name="reception_days_en">
                                 @if($errors->has('reception_days_en'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">

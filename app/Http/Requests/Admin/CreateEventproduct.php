@@ -24,7 +24,6 @@ class CreateEventproduct extends FormRequest
     public function rules(): array
     {
         return [
-            'eventcategory_id' => 'required',
             'centerabout_id' => 'required',
             'expertpeople_id' => 'required',
             'image' => 'required|image|mimes:png,jpg,jpeg,webp',

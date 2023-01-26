@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <label for="centerabout_id">Centers </label>
                             <select name="centerabout_id" id="centerabout_id" class="form-control">
                                 @foreach ($centerabout as $centerabout)
@@ -37,7 +37,27 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+
+                        <div class="col-md-6">
+                            <label>Experts</label>
+                            <select name="expertpeople_id" id="expertpeople_id" class="form-control">
+                                @foreach ($expertperson as $expertperson)
+                                <option @if($expertperson->id == $director->expertpeople_id) selected @endif value="{{ $expertperson->id }}">{{ $expertperson->title_en }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('expertpeople_id'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('expertpeople_id') }}
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+
+                        <div class="col-md-4">
                             <label for="director_name_uz">Director name [Uzbek]</label>
                             <input type="text" id="director_name_uz" value="{{ $director->director_name_uz }}" class="form-control" name="director_name_uz">
                             @if($errors->has('director_name_uz'))
@@ -49,7 +69,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="director_name_ru">Director name [Russian]</label>
                             <input type="text" id="director_name_ru" value="{{ $director->director_name_ru }}" class="form-control" name="director_name_ru">
                             @if($errors->has('director_name_ru'))
@@ -61,7 +81,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="director_name_en">Director name [English]</label>
                             <input type="text" id="director_name_en" value="{{ $director->director_name_en }}" class="form-control" name="director_name_en">
                             @if($errors->has('director_name_en'))

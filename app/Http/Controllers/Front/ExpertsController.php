@@ -7,14 +7,14 @@ use App\Models\Centerabout;
 use App\Models\Expertpeople;
 use App\Models\Outputnew;
 use Illuminate\Http\Request;
-use App\Models\CenterFilter;
+use App\Models\Centerfilter;
 use Illuminate\Support\Facades\DB;
 
 class ExpertsController extends Controller
 {
     public function list() {
         $expertpeoples = Expertpeople::orderBy('created_at', 'DESC')->paginate(12);
-        $centerFilter = CenterFilter::orderBy('created_at', 'DESC')->with('centerabouts')->paginate(4);
+        $centerFilter = Centerfilter::orderBy('created_at', 'DESC')->with('centerabouts')->paginate(4);
         return view('front.experts.list', compact('expertpeoples', 'centerFilter'));
     }
 
@@ -35,7 +35,7 @@ class ExpertsController extends Controller
         $centersId = $request->id;
         $lim = $request->lim;
         $centerabout =  Centerabout::query();
-       
+
         if(isset($centersId)&&!empty($centersId)){
 
             $centerabout = $centerabout->where('centerfilter_id',$centersId);
@@ -45,7 +45,7 @@ class ExpertsController extends Controller
         }
 
         $centerabout = $centerabout->get();
- 
+
         return response(view('front.experts._filter_details',['centerabouts'=>$centerabout]));
     }
     public function show($slug)

@@ -47,7 +47,7 @@ $(document).ready(function(){
                }
              });
         }
-      
+
     });
 
     checkBoxButton.click(function(e){

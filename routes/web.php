@@ -20,7 +20,6 @@ use App\Http\Controllers\Admin\SupportaboutController;
 use App\Http\Controllers\Admin\ContactcenterController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\ProjectdocumentController;
-use App\Http\Controllers\Admin\EventcategoryController;
 use App\Http\Controllers\Admin\EventproductController;
 use App\Http\Controllers\Admin\AboutwhatController;
 use App\Http\Controllers\Admin\AboutmissionController;
@@ -71,7 +70,6 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'contactcenter' => ContactcenterController::class,
         'options' => OptionsController::class,
         'projectdocument' => ProjectdocumentController::class,
-        'eventcategory' => EventcategoryController::class,
         'eventproduct' => EventproductController::class,
         'aboutwhat' => AboutwhatController::class,
         'aboutmission' => AboutmissionController::class,
@@ -91,6 +89,7 @@ Route::group(
         Route::get('articles', [NewsController::class, 'list'])->name('articles');
         Route::get('articles/{slug}', [NewsController::class, 'show'])->name('article');
         Route::get('eventproducts/{id}', [EventController::class, 'list'])->name('eventproducts');
+        Route::post('eventproducts/ajax-event-filter', [EventController::class, 'ajaxEventFilterList'])->name('eventproducts.ajaxEventFilter');
         Route::get('eventproduct/{slug}', [EventController::class, 'show'])->name('eventproduct');
         Route::get('events', [EventsController::class, 'index'])->name('events');
         Route::get('centerabouts', [CentersController::class, 'list'])->name('centerabouts');
@@ -98,11 +97,11 @@ Route::group(
         Route::get('expertpeoples', [ExpertsController::class, 'list'])->name('expertpeoples');
         Route::post('expertpeoples/ajax-expert-filter', [ExpertsController::class, 'ajaxExpertFilterList'])->name('expertpeoples.ajaxExpertFilter');
         Route::get('expertpeoples/ajax-filter-details', [ExpertsController::class, 'ajaxFilterDetails'])->name('expertpeoples.ajaxFilterDetails');
-   
+
         Route::get('expertpeoples/{slug}', [ExpertsController::class, 'show'])->name('expertpeople');
-        
-            
-        
+
+
+
         Route::get('contact', [ContactController::class, 'index'])->name('contact');
         Route::get('outputnews/{id?}', [OutputController::class, 'list'])->name('outputnews');
         Route::post('outputnews/ajax-filter', [OutputController::class, 'ajaxFilterList'])->name('outputnews.ajaxFilter');

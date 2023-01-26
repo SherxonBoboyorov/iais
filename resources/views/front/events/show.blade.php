@@ -15,7 +15,7 @@
                     <ul class="about_us__menu">
 
                         <li>
-                            <a href="{{ route('events') }}" class="about_us__menu__link">{{ $eventproduct->eventcategory->{'title_' . app()->getLocale()} }}</a>
+                            <a href="{{ route('events') }}" class="about_us__menu__link">past events</a>
                         </li>
 
                         <li>
@@ -96,7 +96,7 @@
                     <div class="outputs_contint__cart__list">
                         <div class="outputs_contint__list">
                             <div class="outputs__item__cart">
-                                <h4 class="outputs__title__h4">{{ $eventproduct->eventcategory->{'title_' . app()->getLocale()} }}</h4>
+                                <h4 class="outputs__title__h4">upcoming events</h4>
                                 <h5 class="outputs__title__h5">{{ $eventproduct->created_at->format('F d, Y') }}</h5>
                             </div>
 
@@ -105,15 +105,20 @@
 
                                 <ul class="outputs_contint__icons">
                                     <li>
-                                        <a href="{{ $options->where('key', 'instagram')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={!! request()->url() !!}&title={!!  $eventproduct->{'title_' . app()->getLocale()}  !!}" class="outputs_contint__icons__link"><i class="fab fa-linkedin"></i></a>
+
                                     </li>
 
                                     <li>
-                                        <a href="{{ $options->where('key', 'invision')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-invision"></i></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-twitter"></i></a>
                                     </li>
 
                                     <li>
-                                        <a href="{{ $options->where('key', 'youtube')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-youtube"></i></a>
+                                        <a href="http://twitter.com/share?text=Im Sharing on Twitter&url={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-facebook"></i></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://t.me/share/url?url={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-telegram"></i></a>
                                     </li>
                                 </ul>
                             </section>
