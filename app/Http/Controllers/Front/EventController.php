@@ -46,7 +46,7 @@ class EventController extends Controller
         }
         $past = $past->paginate(6);
 
-        return response(view('front.outputs.event_filter_result',['past'=>$past]));
+        return response(view('front.events.event_filter_result',['past'=>$past]));
     }
 
 

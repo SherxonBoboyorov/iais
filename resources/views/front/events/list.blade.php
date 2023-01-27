@@ -39,7 +39,7 @@
                     <h3 class="history__title__h3">@lang('main.events')</h3>
 
                     <ul class="history__menu">
-                        {{-- @foreach ($upcoming as $eventproduct)
+                        @foreach ($upcoming as $eventproduct)
                             <li>
                                 <a href="{{ route('eventproducts', [1]) }}" class="history__menu__link active">@lang('main.upcoming_events')</a>
                             </li>
@@ -48,37 +48,9 @@
                             <li>
                                 <a href="{{ route('eventproducts', [1]) }}" class="history__menu__link">@lang('main.past_events')</a>
                             </li>
-                        @endforeach --}}
+                        @endforeach
 
                     </ul>
-
-                    {{-- <form id="filtereventForm" action="#!">
-
-                        <section class="experts__form__list">
-
-                            <h4 class="experts__title__h4">@lang('main.by_date')</h4>
-                            @foreach ($events as $value)
-                            <label class="input-wrap">
-                                <input type="checkbox" name="dates[]" value="{{ $value }}" class="experts__input__form">
-                                <span class="checkmark"></span>
-                                <h5 class="experts__title__h5">{{ $value }}</h5>
-                            </label>
-                            @endforeach
-
-                        </section>
-
-                        <section class="experts__form__list">
-                            <h4 class="experts__title__h4">by topic</h4>
-                            <label class="input-wrap">
-                                <input type="checkbox" class="experts__input__form">
-                                <span class="checkmark"></span>
-                                <h5 class="experts__title__h5">Lorem ipsum</h5>
-                            </label>
-
-                        </section>
-
-                    </form> --}}
-                    {{-- <a href="#!" class="experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a> --}}
 
                     <form id="filtereventForm" action="#!">
                         @csrf
@@ -92,7 +64,6 @@
                             </label>
                             @endforeach
 
-                            {{-- <a href="#!" class="experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a> --}}
 
                         </section>
                         @foreach ($centerFilter as $value)
@@ -156,6 +127,7 @@
 
             </div>
         </section>
+
     </div>
 
     <!-- outputs_in end -->
