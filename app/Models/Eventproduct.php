@@ -29,6 +29,11 @@ class Eventproduct extends Model
         return $this->hasOne(Eventcategory::class, 'id', 'eventcategory_id');
     }
 
+    public function expertpeople()
+    {
+        return $this->belongsTo(Expertpeople::class,'expertpeople_id');
+    }
+
     public static function uploadImage($request): ?string
     {
         if ($request->hasFile('image')) {

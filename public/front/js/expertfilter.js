@@ -8,11 +8,20 @@ $(document).ready(function(){
 
     let showMoreButton = $('.filter_show_more');
 
-    
+    let expertQuery = $('#expertQuery');
 
+    let expertSearchFormSubmit =  $('#expertSearchFormSubmit');
+
+    let queryForm =  $('#expertSearchQueryForm');
+
+    queryForm.on('submit',function(e){
+        e.preventDefault(); 
+        formValues = queryForm.serialize()+'&'+filterExpertForm.serialize();
+        getMessage(formValues);
+    });
 
     checkBoxButton.click(function(e){
-        formValues = filterExpertForm.serialize();
+        formValues = filterExpertForm.serialize()+'&'+queryForm.serialize();
         getMessage(formValues)
     });
 
@@ -63,7 +72,6 @@ $(document).ready(function(){
            url:'/expertpeoples/ajax-expert-filter',
            data:formValues,
            success:function(res){
-            console.log(resultSection,res);
             resultSection.empty();
             resultSection.append(res)
            },

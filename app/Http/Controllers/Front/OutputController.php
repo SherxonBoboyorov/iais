@@ -55,7 +55,6 @@ class OutputController extends Controller
             ->first();
 
         return view('front.outputs.show', [
-            'expertpeoples' => $expertpeoples,
             'outputnew' => $outputnew,
             'outputnews' => Outputnew::where([
                 ['outputcategory_id', $outputnew->outputcategory_id],

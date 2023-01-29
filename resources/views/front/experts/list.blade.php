@@ -38,10 +38,10 @@
                 <aside>
                     <h3 class="history__title__h3">@lang('main.search_experts')</h3>
 
-                    <form action="{{ route('front_search') }}" class="experts__form" method="POST">
+                    <form id="expertSearchQueryForm" action="#" class="experts__form" method="POST">
                         @csrf
-                        <input type="text" class="experts__input" name="phrase" >
-                        <button type="submit" class="experts__button"><i class="fas fa-search"></i></button>
+                        <input type="text" id="expertQuery" value="" class="experts__input" name="q" >
+                        <button type="submit" id="expertSearchFormSubmit" class="experts__button"><i class="fas fa-search"></i></button>
                     </form>
 
                     <form id="filterExpertForm" action="#!">

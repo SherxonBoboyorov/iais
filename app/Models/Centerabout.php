@@ -21,6 +21,14 @@ class Centerabout extends Model
         'description_ru', 'description_uz', 'description_en',
     ];
 
+    public function experts(){
+        return $this->hasMany(Expertpeople::class);
+    }
+
+    public function outputs(){
+        return $this->hasMany(Outputnew::class);
+    }
+
     public function centerfilter()
     {
         return $this->belongsTo('App\Models\Centerfilter', 'centerfilter_id');

@@ -61,24 +61,22 @@
                 <div class="outputs_contint__cart">
 
                     <aside>
-
-                        @foreach ($expertpeoples as $expertpeople)
                         <h3 class="history__title__h3">@lang('main.written_by')</h3>
 
                         <div class="history__leader__item">
 
                             <div class="history__leader__img">
-                                <img src="{{ asset($expertpeople->image) }}" alt="leader">
+                                <img src="{{ asset($eventproduct->expertpeople->image) }}" alt="leader">
                             </div>
 
-                            <h3 class="history__leader__name">{{ $expertpeople->{'title_' . app()->getLocale()} }}</h3>
+                            <h3 class="history__leader__name">{{ $eventproduct->expertpeople->{'title_' . app()->getLocale()} }}</h3>
 
                             <div class="history__leader__text">
                                 <p>
-                                    {!! $expertpeople->{'content_' . app()->getLocale()} !!}
+                                    {!! $eventproduct->expertpeople->{'content_' . app()->getLocale()} !!}
                                 </p>
                             </div>
-                            <a href="{{ route('expertpeople', $expertpeople->{'slug_' . app()->getLocale()}) }}" class="centers_in__link">@lang('main.more') <span><i class="fas fa-chevron-right"></i></span></a>
+                            <a href="{{ route('expertpeople', $eventproduct->expertpeople->{'slug_' . app()->getLocale()}) }}" class="centers_in__link">@lang('main.more') <span><i class="fas fa-chevron-right"></i></span></a>
                         </div>
 
 
@@ -86,11 +84,9 @@
 
                         <div class="outputs_contint__text">
                             <p>
-                                {!! $expertpeople->{'contact_'. app()->getLocale()} !!}
+                                {!! $eventproduct->expertpeople->{'contact_'. app()->getLocale()} !!}
                             </p>
                         </div>
-
-                        @endforeach
                     </aside>
 
                     <div class="outputs_contint__cart__list">

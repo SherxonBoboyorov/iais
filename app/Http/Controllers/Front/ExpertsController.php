@@ -21,9 +21,16 @@ class ExpertsController extends Controller
 
     public function ajaxExpertFilterList(Request $request){
         $centersId = $request->center_id;
+        $q = $request->q;
         $expertpeoples =  Expertpeople::orderBy('created_at', 'DESC');
         if(isset($centersId)&&!empty($centersId)){
             $expertpeoples = $expertpeoples->whereIn('centerabout_id',$centersId);
+        }
+
+        if(isset($q)&&!empty($q)){
+            $expertpeoples = $expertpeoples->orWhere('title_uz','LIKE','%'.$q.'%')
+            ->orWhere('title_ru','LIKE','%'.$q.'%')
+            ->orWhere('title_en','LIKE','%'.$q.'%');
         }
 
         $expertpeoples = $expertpeoples->paginate(12);

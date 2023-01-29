@@ -28,6 +28,11 @@ class Outputnew extends Model
         return $this->belongsTo(Centerabout::class, 'centerabout_id');
     }
 
+    public function expertpeople()
+    {
+        return $this->belongsTo(Expertpeople::class,'expertpeople_id');
+    }
+
     public function outputcategory()
     {
         return $this->hasOne(Outputcategory::class, 'id', 'outputcategory_id');
