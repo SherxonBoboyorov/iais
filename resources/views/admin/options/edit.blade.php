@@ -32,10 +32,10 @@
                                     <option value="email" @if($option->key == 'email') selected @endif>E-mail</option>
                                     <option value="phone" @if($option->key == 'phone') selected @endif>Phone</option>
                                     <option value="map" @if($option->key == 'map') selected @endif>Google or Yandex MAP</option>
-                                    <option value="instagram" @if($option->key == 'instagram') selected @endif>Instagram</option>
+                                    <option value="linkedin" @if($option->key == 'linkedin') selected @endif>Linkedin</option>
+                                    <option value="twitter" @if($option->key == 'twitter') selected @endif>Twitter</option>
                                     <option value="facebook" @if($option->key == 'facebook') selected @endif>Facebook</option>
                                     <option value="youtube" @if($option->key == 'youtube') selected @endif>Youtube</option>
-                                    <option value="invision" @if($option->key == 'invision') selected @endif>Invision</option>
                                 </select>
                                 @if($errors->has('key'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">

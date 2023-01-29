@@ -15,6 +15,7 @@ class Director extends Model
     protected $fillable = [
         'image',
         'centerabout_id',
+        'expertpeople_id',
         'director_name_ru', 'director_name_uz', 'director_name_en',
         'job_title_ru', 'job_title_uz', 'job_title_en',
         'phone_number',

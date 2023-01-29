@@ -25,6 +25,7 @@ class CreateDirector extends FormRequest
     {
         return [
             'centerabout_id' => 'required',
+            'expertpeople_id' => 'required',
             'image' => 'required|image|mimes:png,jpg,jpeg,webp',
             'director_name_ru' => 'required|max:255',
             'director_name_uz' => 'required|max:255',

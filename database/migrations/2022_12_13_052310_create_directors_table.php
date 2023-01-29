@@ -18,6 +18,8 @@ return new class extends Migration
 
             $table->bigInteger('centerabout_id')->unsigned();
 
+            $table->bigInteger('expertpeople_id')->unsigned();
+
             $table->string('image');
 
             $table->string('director_name_ru');

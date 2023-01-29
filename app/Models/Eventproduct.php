@@ -13,7 +13,6 @@ class Eventproduct extends Model
     protected $table = 'eventproducts';
 
     protected $fillable = [
-        'eventcategory_id',
         'centerabout_id',
         'expertpeople_id',
         'image',
@@ -24,9 +23,9 @@ class Eventproduct extends Model
         'frame'
     ];
 
-    public function eventcategory()
+    public function centerabout()
     {
-        return $this->hasOne(Eventcategory::class, 'id', 'eventcategory_id');
+        return $this->belongsTo('App\Models\Centerabout', 'centerabout_id');
     }
 
     public function expertpeople()

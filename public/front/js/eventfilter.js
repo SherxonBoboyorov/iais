@@ -1,10 +1,7 @@
-
-
-
 $(document).ready(function(){
-    let filterForm = $('#filterForm');
+    let filterForm = $('#filtereventForm');
     let checkBoxButton = $('input[type="checkbox"]');
-    let resultSection = $('#result_section');
+    let resultSection = $('#result_event_section');
 
     let showMoreButton = $('.filter_show_more');
     console.log(showMoreButton);
@@ -26,9 +23,9 @@ $(document).ready(function(){
                     section.append(res)
                 },
                 error: function(errors) {
-                 console.log(errors);
-               }
-             });
+                console.log(errors);
+            }
+            });
         }
         else{
             $.ajax({
@@ -43,12 +40,13 @@ $(document).ready(function(){
                     section.append(res)
                 },
                 error: function(errors) {
-                 console.log(errors);
-               }
-             });
+                console.log(errors);
+            }
+            });
         }
 
     });
+
 
     checkBoxButton.click(function(e){
         formValues = filterForm.serialize();
@@ -58,7 +56,7 @@ $(document).ready(function(){
     function getMessage(formValues) {
         $.ajax({
            type:'POST',
-           url:'/outputnews/ajax-filter',
+           url:'/eventproducts/ajax-event-filter',
            data:formValues,
            success:function(res){
             resultSection.empty();
@@ -69,3 +67,7 @@ $(document).ready(function(){
         });
     }
 })
+
+
+
+

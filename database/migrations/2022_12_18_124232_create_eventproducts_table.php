@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('eventproducts', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('eventcategory_id')->unsigned();
-
             $table->bigInteger('centerabout_id')->unsigned();
 
             $table->bigInteger('expertpeople_id')->unsigned();

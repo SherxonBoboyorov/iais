@@ -304,7 +304,7 @@
                         <a href="#" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
-                            Director of Center
+                            Head of Center
                              <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>
@@ -564,30 +564,6 @@
                             </li>
                         </ul>
                      </li>
-                    {{-- end  --}}
-
-                    {{-- start  --}}
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon"></i>
-                                <p>
-                                    Events category
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('eventcategory.index') }}" class="nav-link">
-                                        <p>All</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('eventcategory.create') }}" class="nav-link">
-                                        <p>Add</p>
-                                    </a>
-                                </li>
-                            </ul>
-                         </li>
                     {{-- end  --}}
 
                     {{-- start  --}}

@@ -7,7 +7,7 @@ use App\Models\Outputnew;
 use App\Models\Outputcategory;
 use App\Models\Expertpeople;
 use Illuminate\Http\Request;
-use App\Models\CenterFilter;
+use App\Models\Centerfilter;
 use Illuminate\Support\Facades\DB;
 class OutputController extends Controller
 {
@@ -19,7 +19,7 @@ class OutputController extends Controller
 
         $outputs = Outputnew::select(DB::raw('YEAR(created_at) as year'))->distinct()->pluck('year')->toArray();
 
-        $centerFilter = CenterFilter::orderBy('created_at', 'DESC')->with('centerabouts')->get();
+        $centerFilter = Centerfilter::orderBy('created_at', 'DESC')->with('centerabouts')->get();
 
         return view('front.outputs.list', compact(
              'outputnews',

@@ -24,7 +24,6 @@ class UpdateEventproduct extends FormRequest
     public function rules(): array
     {
         return [
-            'eventcategory_id' => 'required',
             'centerabout_id' => 'required',
             'expertpeople_id' => 'required',
             'title_ru' => 'required|max:255',

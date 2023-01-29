@@ -20,28 +20,11 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
-                        <div class="col-md-4">
-                            <label>Events</label>
-                            <select name="eventcategory_id" id="eventcategory_id" class="form-control">
-                                @foreach ($eventcategories as $eventcategory)
-                                    <option value="{{ $eventcategory->id }}">{{ $eventcategory->title_en }}</option>
-                                @endforeach
-                            </select>
-                            @if($errors->has('eventcategory_id'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                {{ $errors->first('eventcategory_id') }}
-                            </div>
-                            @endif
-                        </div>
-
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label>Centers</label>
                             <select name="centerabout_id" id="centerabout_id" class="form-control">
                                 @foreach ($centerabouts as $centerabout)
-                                    <option value="{{ $centerabout->id }}">{{ $centerabout->title_ru }}</option>
+                                    <option value="{{ $centerabout->id }}">{{ $centerabout->title_en }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('centerabout_id'))
@@ -54,7 +37,7 @@
                             @endif
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label>Experts</label>
                             <select name="expertpeople_id" id="expertpeople_id" class="form-control">
                                 @foreach ($expertpeoples as $expertpeople)

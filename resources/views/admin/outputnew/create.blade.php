@@ -24,7 +24,7 @@
                             <label>Outputs category</label>
                             <select name="outputcategory_id" id="outputcategory_id" class="form-control">
                                 @foreach ($outputcategories as $outputcategory)
-                                    <option value="{{ $outputcategory->id }}">{{ $outputcategory->title_ru }}</option>
+                                    <option value="{{ $outputcategory->id }}">{{ $outputcategory->title_en }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('outputcategory_id'))
@@ -40,7 +40,7 @@
                             <label>Experts</label>
                             <select name="expertpeople_id" id="expertpeople_id" class="form-control">
                                 @foreach ($expertpeoples as $expertpeople)
-                                    <option value="{{ $expertpeople->id }}">{{ $expertpeople->title_ru }}</option>
+                                    <option value="{{ $expertpeople->id }}">{{ $expertpeople->title_en }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('expertpeople_id'))

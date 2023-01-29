@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CreateEventproduct;
 use App\Http\Requests\Admin\UpdateEventproduct;
 use App\Models\Eventproduct;
-use App\Models\Eventcategory;
 use App\Models\Centerabout;
 use App\Models\Expertpeople;
 use Illuminate\Http\Request;
@@ -35,11 +34,9 @@ class EventproductController extends Controller
      */
     public function create()
     {
-        $eventcategories = Eventcategory::orderby('created_at', 'DESC')->get();
         $centerabouts = Centerabout::orderby('created_at', 'DESC')->get();
         $expertpeoples = Expertpeople::orderby('created_at', 'DESC')->get();
         return view('admin.eventproduct.create', [
-            'eventcategories' => $eventcategories,
             'centerabouts' => $centerabouts,
             'expertpeoples' => $expertpeoples
         ]);
@@ -86,12 +83,10 @@ class EventproductController extends Controller
      */
     public function edit(Eventproduct $eventproduct)
     {
-        $eventcategories = Eventcategory::orderBy('created_at', 'DESC')->get();
         $centerabout = Centerabout::orderBy('created_at', 'DESC')->get();
         $expertperson = Expertpeople::orderBy('created_at', 'DESC')->get();
 
         return view('admin.eventproduct.edit', [
-            'eventcategories' => $eventcategories,
             'eventproduct' => $eventproduct,
             'centerabout' => $centerabout,
             'expertperson' => $expertperson

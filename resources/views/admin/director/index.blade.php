@@ -47,7 +47,7 @@
                             <td>
                                 <img src="{{ asset($director->image) }}" alt="" width="35" height="35">
                             </td>
-                            <td>{{ $director->centerabout->title_ru ?? "" }}</td>
+                            <td>{{ $director->centerabout->title_en ?? "" }}</td>
                             <td>{{ $director->director_name_uz }}</td>
                             <td>{{ $director->director_name_ru }}</td>
                             <td>{{ $director->director_name_en }}</td>
@@ -56,7 +56,7 @@
                                     <i class="fa fa-edit"></i>
                                 </a>
                             </td>
-                            {{-- <td>
+                            <td>
                                 <form action="{{ route('director.destroy', $director->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -64,7 +64,7 @@
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </form>
-                            </td> --}}
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

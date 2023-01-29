@@ -31,10 +31,10 @@
                                   <option value="email">E-mail</option>
                                   <option value="phone">Phone</option>
                                   <option value="map">Google or Yandex MAP</option>
-                                  <option value="instagram">Instagram</option>
+                                  <option value="linkedin">Linkedin</option>
+                                  <option value="twitter">Twitter</option>
                                   <option value="facebook">Facebook</option>
                                   <option value="youtube">Youtube</option>
-                                  <option value="invision">Invison</option>
                                   <option value="meta_title_ru">Meta title RU</option>
                                   <option value="meta_title_uz">Meta title UZ</option>
                                   <option value="meta_title_en">Meta title EN</option>
