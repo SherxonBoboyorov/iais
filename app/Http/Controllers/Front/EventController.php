@@ -36,7 +36,17 @@ class EventController extends Controller
     public function ajaxEventFilterList(Request $request){
         $centersId = $request->center_id;
         $dates = $request->dates;
+        $l= $request->l;
         $past =  Eventproduct::orderBy('created_at', 'DESC');
+        if(isset($l)&&!empty($l)){
+            if($l=='2'){
+                $past = $past->where('created_at',"<=",now());
+            }
+            else{
+                $past = $past->where('created_at',">=",now());
+            }
+        }
+
         if(isset($centersId)&&!empty($centersId)){
             $past = $past->whereIn('centerabout_id',$centersId);
         }

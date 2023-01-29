@@ -214,11 +214,11 @@
                         <div class="footer__item">
                             <ul class="footer__item__icons">
                                 <li>
-                                    <a href="{{ $options->where('key', 'linkedin')->first()->value }}" class="footer__link__icons"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://linkedin.com" class="footer__link__icons"><i class="fab fa-linkedin"></i></a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ $options->where('key', 'twitter')->first()->value }}" class="footer__link__icons"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://twitter.com" class="footer__link__icons"><i class="fab fa-twitter"></i></a>
                                 </li>
 
                                 <li>

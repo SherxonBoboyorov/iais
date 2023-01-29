@@ -39,17 +39,13 @@
                     <h3 class="history__title__h3">@lang('main.events')</h3>
 
                     <ul class="history__menu">
-                        @foreach ($upcoming as $eventproduct)
-                            <li>
-                                <a href="{{ route('eventproducts', [1]) }}" class="history__menu__link active">@lang('main.upcoming_events')</a>
-                            </li>
-                            @endforeach
-                        @foreach ($past as $eventproduct)
-                            <li>
-                                <a href="{{ route('eventproducts', [1]) }}" class="history__menu__link">@lang('main.past_events')</a>
-                            </li>
-                        @endforeach
-
+                        <li>
+                            <a data-eventtype='1' href="{{ route('eventproducts', [1]) }}" class="eventtype-change history__menu__link @if(request('id')=='1') active @endif">@lang('main.upcoming_events')</a>
+                        </li>
+                    
+                        <li>
+                            <a data-eventtype='2' href="{{ route('eventproducts', [2]) }}" class="eventtype-change history__menu__link @if(request('id')=='2') active @endif ">@lang('main.past_events')</a>
+                        </li>
                     </ul>
 
                     <form id="filtereventForm" action="#!">

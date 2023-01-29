@@ -173,21 +173,21 @@
                     @if ($eventproducts->count() > 0)
 
                     <div class="events__list__cart">
-                        <a href="{{ route('eventproduct', $eventproducts[0]->{'slug_' . app()->getLocale()}) }}">
+                        <a href="{{ route('eventproduct', $eventproductMain->{'slug_' . app()->getLocale()}) }}">
                             <div class="events__img__cart">
-                                <img src="{{ asset($eventproducts[0]->image) }}" alt="events">
+                                <img src="{{ asset($eventproductMain->image) }}" alt="events">
                             </div>
 
                             <div class="events__item__cart">
                                 <h4 class="events__title__h4">past event</h4>
-                                <h5 class="events__title__h5">{{ $eventproducts[0]->created_at->format('F d, Y') }}</h5>
+                                <h5 class="events__title__h5">{{ $eventproductMain->created_at->format('F d, Y') }}</h5>
                             </div>
 
-                            <h3 class="events__title__h3">{{ $eventproducts[0]->{'title_' . app()->getLocale()} }}</h3>
+                            <h3 class="events__title__h3">{{ $eventproductMain->{'title_' . app()->getLocale()} }}</h3>
 
                             <div class="events__text">
                                 <p>
-                                    {!! $eventproducts[0]->{'description_' . app()->getLocale()} !!}
+                                    {!! $eventproductMain->{'description_' . app()->getLocale()} !!}
                                 </p>
                             </div>
                         </a>

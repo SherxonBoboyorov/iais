@@ -28,7 +28,8 @@ class IndexController extends Controller
         $outputnews = Outputnew::orderBy('created_at', 'DESC')->take(6)->get();
         $articles = Article::orderBy('created_at', 'DESC')->paginate(3);
         $videos = Video::orderBy('created_at', 'DESC')->get();
-        $eventproducts = Eventproduct::orderBy('created_at', 'DESC')->paginate(3);
+        $eventproductMain = Eventproduct::orderBy('created_at', 'DESC')->first();
+        $eventproducts = Eventproduct::orderBy('created_at', 'DESC')->where('id','!=',$eventproductMain->id)->paginate(3);
 
         return view('front.index', compact(
             'sliders',
@@ -36,6 +37,7 @@ class IndexController extends Controller
             'articles',
             'videos',
             'eventproducts',
+            'eventproductMain'
         ) );
     }
 

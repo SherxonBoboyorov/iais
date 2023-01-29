@@ -4,6 +4,17 @@ $(document).ready(function(){
     let resultSection = $('#result_event_section');
 
     let showMoreButton = $('.filter_show_more');
+
+    let eventType = $('.eventtype-change');
+
+    eventType.click(function(e){
+        e.preventDefault();
+        eventTypeValue = e.target.dataset.eventtype;
+        filterForm.data('l',eventTypeValue);
+        formValues = filterForm.serialize()+'&'+'l='+eventTypeValue;
+        getMessage(formValues);
+    });
+
     console.log(showMoreButton);
     showMoreButton.click(function(e){
         console.log(showMoreButton);
@@ -49,7 +60,7 @@ $(document).ready(function(){
 
 
     checkBoxButton.click(function(e){
-        formValues = filterForm.serialize();
+        formValues = filterForm.serialize()+'&'+'l='+filterForm.data('l');
         getMessage(formValues)
     });
 
