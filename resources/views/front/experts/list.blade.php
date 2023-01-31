@@ -47,7 +47,7 @@
                     <form id="filterExpertForm" action="#!">
                         @csrf
                         @foreach ($centerFilter as $value)
-            
+
                         <section  class="experts__form__list">
                             <h4 class="experts__title__h4">{{ $value->{'tropic_' . app()->getLocale()}  }}</h4>
                             <div id="regionSection<?= $value->id ?>">
@@ -60,7 +60,7 @@
                                     </label>
                                 @endforeach
                             </div>
-                           
+
 
                             <a href="#!" data-less="0" data-showMore="@lang('main.show_more')" data-showLess="@lang('main.show_less')"   data-id="<?= $value->id ?>" class="filter_show_more experts__link__from">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a>
                         </section>

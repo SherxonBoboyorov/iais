@@ -9,7 +9,7 @@
         <section class="container">
             <div class="about_us__cart">
                 <div class="about_us__list">
-                    <h2 class="about_us__title__h2">past events</h2>
+                    <h2 class="about_us__title__h2">@lang('main.past_events')</h2>
 
                     <ul class="about_us__menu">
                         <li>
@@ -17,7 +17,7 @@
                         </li>
 
                         <li>
-                            <a class="about_us__menu__link">past events</a>
+                            <a class="about_us__menu__link">@lang('main.past_events')</a>
                         </li>
                     </ul>
                 </div>
@@ -42,7 +42,7 @@
                         <li>
                             <a data-eventtype='1' href="{{ route('eventproducts', [1]) }}" class="eventtype-change history__menu__link @if(request('id')=='1') active @endif">@lang('main.upcoming_events')</a>
                         </li>
-                    
+
                         <li>
                             <a data-eventtype='2' href="{{ route('eventproducts', [2]) }}" class="eventtype-change history__menu__link @if(request('id')=='2') active @endif ">@lang('main.past_events')</a>
                         </li>
@@ -100,7 +100,13 @@
 
                                 <section>
                                     <div class="outputs__item__cart">
-                                        <h4 class="outputs__title__h4">past event</h4>
+                                        @if($eventproduct->event_date > now())
+                                        <h4 class="outputs__title__h4">@lang('main.upcoming_events')</h4>
+                                        @else
+
+                                        <h4 class="outputs__title__h4">@lang('main.past_events')</h4>
+
+                                        @endif
                                         <h5 class="outputs__title__h5">{{ $eventproduct->created_at->format('F d, Y') }}</h5>
                                     </div>
 

@@ -74,7 +74,7 @@
                         <div class="history__leader__list">
                             @foreach ($aboutperson->persons as $person)
                             <div class="history__leader__item">
-                                <a >
+                                <a href="{{ route('personlist', $person) }}">
                                     <div class="history__leader__img">
                                         <img src="{{ asset($person->image) }}" alt="leader">
                                     </div>

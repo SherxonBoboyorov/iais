@@ -92,7 +92,13 @@
                     <div class="outputs_contint__cart__list">
                         <div class="outputs_contint__list">
                             <div class="outputs__item__cart">
-                                <h4 class="outputs__title__h4">upcoming events</h4>
+                                @if($eventproduct->event_date > now())
+                                <h4 class="events__title__h4">@lang('main.upcoming_events')</h4>
+                                @else
+
+                                <h4 class="events__title__h4">@lang('main.past_events')</h4>
+
+                                @endif
                                 <h5 class="outputs__title__h5">{{ $eventproduct->created_at->format('F d, Y') }}</h5>
                             </div>
 

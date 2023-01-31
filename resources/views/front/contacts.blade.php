@@ -95,21 +95,13 @@
                 <h2 class="outputs__title__h2">@lang('main.callback')</h2>
                 <form action="{{ route('saveCallback') }}" class="contacts__form" method="POST">
                     @csrf
-                    <input type="text" name="name" placeholder="Name" class="contacts__input" required>
+                    <input type="text" name="name" placeholder="@lang('main.name')" class="contacts__input" required>
                     <section class="contacts__list__form">
                         <input type="email" name="email" placeholder="Email" class="contacts__input" required>
-                        <input type="tel" name="phone" placeholder="Phone number" class="contacts__input" required>
+                        <input type="tel" name="phone" placeholder="@lang('main.phone_number')" class="contacts__input" required>
                     </section>
-                    <textarea class="contacts__textarea" name="comment" placeholder="Comment" required></textarea>
+                    <textarea class="contacts__textarea" name="comment" placeholder="@lang('main.comment')" required></textarea>
 
-                    @if (session('message'))
-
-                    <div style="padding: 20px; background-color: green; color: #fff; margin-top: 15px; width: 100%">
-                     <span style="margin-left: 15px; color: #fff; font-weight: bold; float: right; font-size: 22px; line-height: 20px; cursor: pointer; transition: 0.3s;" onclick="this.parentElement.style.display='none';">&times;</span>
-                           Your application has been successfully sent
-                    </div>
-
-                 @endif
                     <button type="submit" class="contacts__button">@lang('main.send') <span><i class="fas fa-chevron-right"></i></span></button>
                 </form>
 

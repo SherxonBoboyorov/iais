@@ -15,7 +15,7 @@ $(document).ready(function(){
     let queryForm =  $('#expertSearchQueryForm');
 
     queryForm.on('submit',function(e){
-        e.preventDefault(); 
+        e.preventDefault();
         formValues = queryForm.serialize()+'&'+filterExpertForm.serialize();
         getMessage(formValues);
     });
@@ -63,7 +63,7 @@ $(document).ready(function(){
                }
              });
         }
-      
+
     });
 
     function getMessage(formValues) {

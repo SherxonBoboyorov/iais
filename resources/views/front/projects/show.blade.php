@@ -97,19 +97,25 @@
                             <section class="outputs_contint__list__icons">
                                 <h4 class="outputs_contint__title__h4">@lang('main.share')</h4>
 
-                                <ul class="outputs_contint__icons">
-                                    <li>
-                                        <a href="{{ $options->where('key', 'instagram')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-instagram"></i></a>
-                                    </li>
 
-                                    <li>
-                                        <a href="{{ $options->where('key', 'invision')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-invision"></i></a>
-                                    </li>
+                            <ul class="outputs_contint__icons">
+                                <li>
+                                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={!! request()->url() !!}&title={!!  $projectnew->{'title_' . app()->getLocale()}  !!}" class="outputs_contint__icons__link"><i class="fab fa-linkedin"></i></a>
 
-                                    <li>
-                                        <a href="{{ $options->where('key', 'youtube')->first()->value }}" class="outputs_contint__icons__link"><i class="fab fa-youtube"></i></a>
-                                    </li>
-                                </ul>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-twitter"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="http://twitter.com/share?text=Im Sharing on Twitter&url={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-facebook"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="https://t.me/share/url?url={!! request()->url() !!}" class="outputs_contint__icons__link"><i class="fab fa-telegram"></i></a>
+                                </li>
+                            </ul>
                             </section>
                         </div>
 

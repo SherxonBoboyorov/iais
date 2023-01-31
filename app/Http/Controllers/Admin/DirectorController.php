@@ -125,7 +125,7 @@ class DirectorController extends Controller
             return redirect()->route('director.index')->with('message', "Director not found");
         }
 
-        $director = Outputnew::find($id);
+        $director = Director::find($id);
 
         if (File::exists(public_path() . $director->image)) {
             File::delete(public_path() . $director->image);

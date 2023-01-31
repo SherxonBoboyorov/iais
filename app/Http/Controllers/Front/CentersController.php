@@ -22,7 +22,7 @@ class CentersController extends Controller
         ->orWhere('slug_en', $slug)
         ->first();
         $director = Expertpeople::orderBy('created_at', 'DESC')->where('centerabout_id',$centerabout->id)->where('is_director',true)->first();
-       
+
         $expertpeoples = Expertpeople::orderBy('created_at', 'DESC')->where('centerabout_id',$centerabout->id)->where('is_director',false)->paginate(4);
         $outputnews = Outputnew::orderBy('created_at', 'DESC')->where('centerabout_id', $centerabout->id)->paginate(3);
 

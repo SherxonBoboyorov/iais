@@ -34,6 +34,8 @@ class ExpertpeopleController extends Controller
     public function create()
     {
         $centerabouts = Centerabout::orderBy('created_at', 'DESC')->get();
+
+
         return view('admin.expertpeople.create', [
             'centerabouts' => $centerabouts
         ]);
@@ -104,6 +106,7 @@ class ExpertpeopleController extends Controller
         $expertperson = Expertpeople::find($id);
 
         $data = $request->all();
+
         $data['image'] = Expertpeople::updateImage($request, $expertperson);
 
         $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');

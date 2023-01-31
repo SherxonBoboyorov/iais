@@ -112,6 +112,7 @@ Route::group(
         Route::post('save_callback', [ContactController::class, 'saveCallback'])->name('saveCallback');
         Route::get('careers', [CareersController::class, 'index'])->name('careers');
         Route::get('about', [AboutController::class, 'about'])->name('about');
+        Route::get('about/{id}', [AboutController::class, 'personlist'])->name('personlist');
         Route::get('support', [SupportController::class, 'index'])->name('support');
         Route::get('donate', [DonateController::class, 'index'])->name('donate');
         Route::get('aboutwhats', [AboutwhatsController::class, 'index'])->name('aboutwhats');

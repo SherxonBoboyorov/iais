@@ -14,11 +14,8 @@ class EventController extends Controller
 {
     public function list($id)
     {
-        // $eventcategories = Eventcategory::orderBy('created_at', 'DESC')->with('eventproducts')->get();
-
-        // $eventproducts =  Eventproduct::where('eventcategory_id', $id)->orderBy('created_at', 'DESC')->paginate(6);
-        $upcoming = Eventproduct::where('created_at',">=",now())->orderBy('created_at', 'DESC')->paginate(6);
-        $past = Eventproduct::where('created_at',"<=",now())->orderBy('created_at', 'DESC')->paginate(6);
+        $upcoming = Eventproduct::where('event_date',">=",now())->orderBy('created_at', 'DESC')->paginate(6);
+        $past = Eventproduct::where('event_date',"<=",now())->orderBy('created_at', 'DESC')->paginate(6);
 
         $events = Eventproduct::select(DB::raw('YEAR(created_at) as year'))->distinct()->pluck('year')->toArray();
 
@@ -40,10 +37,10 @@ class EventController extends Controller
         $past =  Eventproduct::orderBy('created_at', 'DESC');
         if(isset($l)&&!empty($l)){
             if($l=='2'){
-                $past = $past->where('created_at',"<=",now());
+                $past = $past->where('event_date',"<=",now());
             }
             else{
-                $past = $past->where('created_at',">=",now());
+                $past = $past->where('event_date',">=",now());
             }
         }
 

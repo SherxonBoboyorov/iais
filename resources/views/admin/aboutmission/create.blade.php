@@ -105,6 +105,21 @@
                     </div><br>
 
                     <div class="row" style="margin-top: 15px">
+                        <div class="col-md-6">
+                            <label for="image">Image</label>
+                            <input type="file" name="image" class="form-control-file">
+                            @if($errors->has('image'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    {{ $errors->first('image') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div><br>
+
+                    <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-success btn-block">Save</button>
                         </div>

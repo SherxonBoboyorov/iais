@@ -100,7 +100,6 @@
                         @endforeach
                     </div>
 
-                    {{-- <a href="#!" class="experts_in__outputs__link">@lang('main.show_more')<span><i class="fas fa-angle-down"></i></span></a> --}}
                 </div>
 
             </div>

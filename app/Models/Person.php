@@ -25,6 +25,7 @@ class Person extends Model
     }
 
 
+
     public static function uploadImage($request): ?string
     {
         if ($request->hasFile('image')) {

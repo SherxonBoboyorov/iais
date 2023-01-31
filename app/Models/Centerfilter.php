@@ -20,6 +20,6 @@ class Centerfilter extends Model
     }
 
     public function abouts(){
-        return $this->centerabouts()->limit(2)->get();
+        return $this->centerabouts()->limit(4)->get();
     }
 }

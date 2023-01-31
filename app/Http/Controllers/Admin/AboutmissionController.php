@@ -7,6 +7,8 @@ use App\Http\Requests\Admin\CreateAboutmission;
 use App\Http\Requests\Admin\UpdateAboutmission;
 use App\Models\Aboutmission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+
 
 class AboutmissionController extends Controller
 {
@@ -40,6 +42,8 @@ class AboutmissionController extends Controller
     public function store(CreateAboutmission $request)
     {
         $data = $request->all();
+
+        $data['image'] = Aboutmission::uploadImage($request);
 
         if(Aboutmission::create($data)) {
             return redirect()->route('aboutmission.index')->with('message', "created successfully");
@@ -83,6 +87,9 @@ class AboutmissionController extends Controller
 
         $data = $request->all();
 
+        $data['image'] = Aboutmission::updateImage($request, $aboutmission);
+
+
         if ($aboutmission->update($data)) {
             return redirect()->route('aboutmission.index')->with('message', 'changed successfully!!!');
         }
@@ -98,7 +105,17 @@ class AboutmissionController extends Controller
      */
     public function destroy($id)
     {
+
+        if (!Aboutmission::find($id)) {
+            return redirect()->route('aboutmission.index')->with('message', "not found");
+        }
+
         $aboutmission = Aboutmission::find($id);
+
+        if (File::exists(public_path() . $aboutmission->image)) {
+            File::delete(public_path() . $aboutmission->image);
+        }
+
 
         if ($aboutmission->delete()) {
             return redirect()->route('aboutmission.index')->with('message', "deleted successfully");

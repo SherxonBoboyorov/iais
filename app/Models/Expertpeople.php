@@ -22,7 +22,8 @@ class Expertpeople extends Model
         'contact_ru', 'contact_uz', 'contact_en',
         'content_ru', 'content_uz', 'content_en',
         'biography_ru', 'biography_uz', 'biography_en',
-        'publication_ru', 'publication_uz', 'publication_en'
+        'publication_ru', 'publication_uz', 'publication_en',
+        'is_director'
     ];
 
     public function centerabout()
@@ -78,6 +79,6 @@ class Expertpeople extends Model
     }
 
     public function director(){
-        return $this->hasOne(Director::class,'expertpeoples_id','id');
+        return $this->hasOne(Director::class,'expertpeople_id','id');
     }
 }

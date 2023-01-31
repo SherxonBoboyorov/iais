@@ -11,8 +11,8 @@ class EventsController extends Controller
 {
     public function index() {
 
-        $upcoming = Eventproduct::where('created_at',">=",now())->orderBy('created_at', 'DESC')->limit(3)->get();
-        $past = Eventproduct::where('created_at',"<=",now())->orderBy('created_at', 'DESC')->limit(3)->get();
+        $upcoming = Eventproduct::where('event_date',">=",now())->orderBy('created_at', 'DESC')->limit(3)->get();
+        $past = Eventproduct::where('event_date',"<=",now())->orderBy('created_at', 'DESC')->limit(3)->get();
 
         return view('front.events', compact(
             'upcoming',

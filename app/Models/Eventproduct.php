@@ -20,7 +20,8 @@ class Eventproduct extends Model
         'slug_ru', 'slug_uz', 'slug_en',
         'description_ru', 'description_uz', 'description_en',
         'ongoing_content_ru', 'ongoing_content_uz', 'ongoing_content_en',
-        'frame'
+        'frame',
+        'event_date'
     ];
 
     public function centerabout()
@@ -30,8 +31,9 @@ class Eventproduct extends Model
 
     public function expertpeople()
     {
-        return $this->belongsTo(Expertpeople::class,'expertpeople_id');
+        return $this->belongsTo('App\Models\Expertpeople', 'expertpeople_id');
     }
+
 
     public static function uploadImage($request): ?string
     {

@@ -56,21 +56,24 @@
                     </ul>
                 </aside>
 
-                <div class="history__list">
+                 <div class="history__list">
                     @foreach ($aboutmissions as $aboutmission)
                     <div class="history__list__float">
                         <h2 class="outputs__title__h2">{{ $aboutmission->{'title_' . app()->getLocale()} }}</h2>
                         <div class="history__item__float clearfix">
+                          <div class="history__img__float">
+                             <img src="{{ asset($aboutmission->image) }}" alt="float">
+                          </div>
                             <div class="history__text__float">
-                                <p>
-                                    {!! $aboutmission->{'content_' . app()->getLocale()} !!}
-                                </p>
+                                {!! $aboutmission->{'content_' . app()->getLocale()} !!}
                             </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
             </div>
+
+
         </section>
     </div>
 

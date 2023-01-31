@@ -36,6 +36,8 @@ class CreateEventproduct extends FormRequest
             'ongoing_content_ru' => 'required',
             'ongoing_content_uz' => 'required',
             'ongoing_content_en' => 'required',
+            'frame' => 'required',
+            'event_date' => 'required'
         ];
     }
 }

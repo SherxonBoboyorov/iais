@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('aboutmissions', function (Blueprint $table) {
             $table->id();
 
+            $table->string('image');
+
             $table->string('title_ru');
             $table->string('title_uz');
             $table->string('title_en');
@@ -23,7 +25,7 @@ return new class extends Migration
             $table->text('content_ru');
             $table->text('content_uz');
             $table->text('content_en');
-            
+
             $table->timestamps();
         });
     }

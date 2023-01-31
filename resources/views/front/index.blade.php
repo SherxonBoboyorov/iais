@@ -179,8 +179,14 @@
                             </div>
 
                             <div class="events__item__cart">
-                                <h4 class="events__title__h4">past event</h4>
-                                <h5 class="events__title__h5">{{ $eventproductMain->created_at->format('F d, Y') }}</h5>
+                                @if($eventproductMain->event_date > now())
+                                     <h4 class="events__title__h4">@lang('main.upcoming_events')</h4>
+                                @else
+
+                                <h4 class="events__title__h4">@lang('main.past_events')</h4>
+
+                                @endif
+                                <h5 class="events__title__h5">{!! date('F d, Y', strtotime($eventproductMain->event_date)) !!}</h5>
                             </div>
 
                             <h3 class="events__title__h3">{{ $eventproductMain->{'title_' . app()->getLocale()} }}</h3>
@@ -204,8 +210,14 @@
 
                                 <section>
                                     <div class="events__item__cart">
-                                        <h4 class="events__title__h4">upcoming event</h4>
-                                        <h5 class="events__title__h5">{{ $eventproduct->created_at->format('F d, Y') }}</h5>
+                                        @if($eventproduct->event_date > now())
+                                        <h4 class="events__title__h4">@lang('main.upcoming_events')</h4>
+                                        @else
+
+                                        <h4 class="events__title__h4">@lang('main.past_events')</h4>
+
+                                        @endif
+                                        <h5 class="events__title__h5">{!! date('F d, Y', strtotime($eventproduct->event_date)) !!}</h5>
                                     </div>
                                     <h3 class="events__title__h3">{{ $eventproduct->{'title_' . app()->getLocale()} }}</h3>
                                 </section>

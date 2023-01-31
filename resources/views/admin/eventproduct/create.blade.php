@@ -212,6 +212,21 @@
                             </div>
                         </div><br>
 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="event_date">Event date</label>
+                                <input type="date" id="event_date" class="form-control" name="event_date">
+                                @if($errors->has('event_date'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    {{ $errors->first('event_date') }}
+                                </div>
+                                @endif
+                            </div>
+                        </div><br><br>
+
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">

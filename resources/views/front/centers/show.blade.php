@@ -80,13 +80,13 @@
                         </div>
 
                         <section class="centers_in__cart__text">
-                            <h2 class="outputs__title__h2">@lang('main.center_for_sustainable')</h2>
+                            <h2 class="outputs__title__h2"></h2>
                             <div class="history__list__text clearfix">
                                 <p>
                                     {!! $director->director->{'center_for_sustianable_' . app()->getLocale()} !!}
                                 </p>
                             </div>
-                            <h2 class="outputs__title__h2">@lang('main.development')</h2>
+                            <h2 class="outputs__title__h2"></h2>
                             <div class="history__list__text clearfix">
                                 <p>
                                     {!! $director->director->{'development_' . app()->getLocale()} !!}
@@ -95,7 +95,7 @@
                         </section>
                     </div>
                 </div>
-            @endif             
+            @endif
 
                 <div class="history__leader__cart">
                     <h2 class="outputs__title__h2">@lang('main.experts')</h2>

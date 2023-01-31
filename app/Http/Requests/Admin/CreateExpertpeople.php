@@ -41,6 +41,7 @@ class CreateExpertpeople extends FormRequest
             'publication_ru' => 'required',
             'publication_uz' => 'required',
             'publication_en' => 'required',
+            'is_director' => ''
         ];
     }
 }

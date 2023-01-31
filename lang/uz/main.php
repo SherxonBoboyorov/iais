@@ -5,14 +5,14 @@
 return [
   'outputs' => 'Resurslar',
   'videos' => 'Videolar',
-  'events' => 'Voqealar',
+  'events' => 'Tadbirlar',
   'news' => 'Yangiliklar',
   'send' => 'Yuborish',
   'search' => 'Qidirmoq',
   'about_us' => 'Biz haqimizda',
   'who_we_are' => 'Biz kimmiz',
-  'what_we_do' => 'Nima qilamiz',
-  'what_we_stand_for' => 'Biz nima tarafdorimiz',
+  'what_we_do' => 'Bizning faoliyat',
+  'what_we_stand_for' => 'Bizning qadriyatlarimiz',
   'careers_and_internships' => 'Karyera va amaliyot',
   'centers' => 'Markazlar',
   'experts' => 'Mutaxassislar',
@@ -30,8 +30,6 @@ return [
   'reception_days' => 'Qabul kunlari',
   'email' => 'Elektron pochta',
   'view_all' => 'Hammasini ko\'rish',
-  'our_donors' => 'Bizning donorlarimiz',
-  'donate' => 'Xayriya qiling',
   'center_for_sustainable' => 'Barqarorlik markazi',
   'development' => 'Rivojlanish',
   'written_by' => 'Tomonidan yozilgan',
@@ -53,5 +51,7 @@ return [
   'fax' => 'Faks',
   'address' => 'Manzil',
   'landmarks' => 'Belgilar',
-  'by_date' => 'Sana bo\'yicha'
+  'by_date' => 'Sana bo\'yicha',
+  'name' => 'Ism',
+  'comment' => 'Fikr bildirish'
 ];
